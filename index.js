@@ -25,6 +25,9 @@ app.get('/mews', (req, res) => {
     .then(mews => {
         res.json(mews);
     })
+    .catch(err => {
+        console.log(err);
+    })
 });
 
 function isValidMew(mew) {
