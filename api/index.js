@@ -10,14 +10,14 @@ mongoose.connect('mongodb+srv://daniel:test123@cluster0.q5azr.mongodb.net/meower
 app.use(cors());
 app.use(express.json());
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
     res.json({
         message: 'Meoww'
     })
 });
 
 
-app.get('/mews', (req, res) => {
+app.get('/api/mews', (req, res) => {
     Mew.find()
     .then(mews => {
         res.json(mews);
@@ -29,7 +29,7 @@ function isValidMew(mew) {
             mew.content && mew.content.toString().trim() !== '';
 }
 
-app.post('/mews', (req, res) => {
+app.post('/api/mews', (req, res) => {
     if(isValidMew(req.body)) {
         // Insert into db
         const newMew = {
