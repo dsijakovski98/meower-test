@@ -7,7 +7,7 @@ const app = express();
 
 const PORT = process.env.PORT || 5000;
 
-mongoose.connect('mongodb+srv://daniel:test123@cluster0.q5azr.mongodb.net/meower?retryWrites=true&w=majority')
+mongoose.connect(process.env.MONGO_URI);
 
 app.use(cors());
 app.use(express.json());
