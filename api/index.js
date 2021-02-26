@@ -51,5 +51,5 @@ app.post('/api/mews', (req, res) => {
 });
 
 app.listen(5000, () => {
-    console.log('Server is listening...');
+    console.log('Server is listening now...');
 })
