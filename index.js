@@ -5,6 +5,8 @@ const Mew = require('./models/mew');
 
 const app = express();
 
+const PORT = process.env.PORT || 5000;
+
 mongoose.connect('mongodb+srv://daniel:test123@cluster0.q5azr.mongodb.net/meower?retryWrites=true&w=majority')
 
 app.use(cors());
@@ -50,6 +52,6 @@ app.post('/mews', (req, res) => {
     }
 });
 
-app.listen(5000, () => {
+app.listen(PORT, () => {
     console.log('Server is listening!');
 })
